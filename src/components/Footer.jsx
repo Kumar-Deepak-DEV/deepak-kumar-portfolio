@@ -1,6 +1,7 @@
 import React from 'react';
 import { Code2 } from 'lucide-react';
-import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { SiLeetcode } from 'react-icons/si';
 
 const Footer = () => {
   return (
@@ -16,17 +17,20 @@ const Footer = () => {
             Crafting elegant, functional, and user-centric digital experiences. Let's create something extraordinary together.
           </p>
           <div className="flex gap-4 mt-2">
-            <a href="#" className="p-3 bg-white/5 rounded-full hover:bg-accent-primary hover:text-white text-gray-400 transition-all border border-white/10">
+            <a href="https://github.com/Kumar-Deepak-DEV/" className="p-3 bg-white/5 rounded-full hover:bg-accent-primary hover:text-white text-gray-400 transition-all border border-white/10">
               <FaGithub size={20} />
             </a>
-            <a href="#" className="p-3 bg-white/5 rounded-full hover:bg-[#0077b5] hover:text-white text-gray-400 transition-all border border-white/10">
+            <a href="https://www.linkedin.com/in/kumar-deepak-cg/" className="p-3 bg-white/5 rounded-full hover:bg-[#0077b5] hover:text-white text-gray-400 transition-all border border-white/10">
               <FaLinkedin size={20} />
             </a>
-            <a href="#" className="p-3 bg-white/5 rounded-full hover:bg-[#1DA1F2] hover:text-white text-gray-400 transition-all border border-white/10">
+            <a href="https://x.com/DeepakKumarCgS" className="p-3 bg-white/5 rounded-full hover:bg-[#1DA1F2] hover:text-white text-gray-400 transition-all border border-white/10">
               <FaTwitter size={20} />
             </a>
-            <a href="#" className="p-3 bg-white/5 rounded-full hover:bg-[#E1306C] hover:text-white text-gray-400 transition-all border border-white/10">
-              <FaInstagram size={20} />
+            <a href="https://www.youtube.com/@qbitCoderz" target="_blank" rel="noopener noreferrer" className="p-3 bg-white/5 rounded-full hover:bg-[#FF0000] hover:text-white text-gray-400 transition-all border border-white/10">
+              <FaYoutube size={20} />
+            </a>
+            <a href="https://leetcode.com/u/Dk-Kumar/" target="_blank" rel="noopener noreferrer" className="p-3 bg-white/5 rounded-full hover:bg-[#FFA116] hover:text-white text-gray-400 transition-all border border-white/10">
+              <SiLeetcode size={20} />
             </a>
           </div>
         </div>
