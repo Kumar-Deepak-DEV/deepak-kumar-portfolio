@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Code2, Home, User, Cpu, GraduationCap, Briefcase, Award, Mail } from 'lucide-react';
+import { Menu, X, Code2, Home, User, Cpu, GraduationCap, Briefcase, Award, Mail, Trophy } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
@@ -19,6 +19,7 @@ const Navbar = () => {
     { name: 'Skills', href: '#skills', icon: Cpu },
     { name: 'Education', href: '#education', icon: GraduationCap },
     { name: 'Projects', href: '#projects', icon: Briefcase },
+    { name: 'Hackathons', href: '#hackathons', icon: Trophy },
     { name: 'Certificates', href: '#certificates', icon: Award },
     { name: 'Contact', href: '#contact', icon: Mail },
   ];
