@@ -22,16 +22,34 @@ const ItemCard = ({ item }) => {
         {item.links && item.links.length > 0 && (
           <div className="absolute inset-0 bg-black/60 flex items-center justify-center gap-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
             {item.links.map((link, i) => (
-              <motion.a
-                key={i}
-                whileHover={{ y: -5 }}
-                href={link.href || '#'}
-                target="_blank"
-                rel="noreferrer"
-                className={`p-4 bg-white/10 rounded-full text-white transition-colors ${link.hoverColor || 'hover:bg-accent-primary'}`}
-              >
-                {link.icon}
-              </motion.a>
+              link.onClick ? (
+                <motion.button
+                  key={i}
+                  whileHover={{ y: -5 }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    link.onClick();
+                  }}
+                  className={`p-4 bg-white/10 rounded-full text-white transition-colors flex items-center justify-center ${link.hoverColor || 'hover:bg-accent-primary'}`}
+                >
+                  {link.icon}
+                </motion.button>
+              ) : (
+                <motion.a
+                  key={i}
+                  whileHover={{ y: -5 }}
+                  className={`p-4 bg-white/10 rounded-full text-white transition-colors flex items-center justify-center cursor-pointer ${link.hoverColor || 'hover:bg-accent-primary'}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    if (link.href && link.href !== '#') {
+                      window.open(link.href, '_blank', 'noopener,noreferrer');
+                    }
+                  }}
+                >
+                  {link.icon}
+                </motion.a>
+              )
             ))}
           </div>
         )}
