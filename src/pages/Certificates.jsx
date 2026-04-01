@@ -2,13 +2,6 @@ import React from 'react';
 import { ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 import ItemCard from '../components/ItemCard';
-// import photo1 from "../assets/quiz1.jpg"
-// import photo2 from "../assets/c.jpg"
-// import photo3 from "../assets/cpp.jpg"
-// import photo4 from "../assets/web.jpg"
-// import photo5 from "../assets/cpp-inter.jpg"
-// import photo6 from "../assets/codeforge.jpg"
-// import photo7 from "../assets/protodash.jpg"
 import photo from "../assets/phots"
 
 const certificates = [
@@ -18,7 +11,34 @@ const certificates = [
     tags: ['Competitive Coding', 'Mental Maths', 'NIT Durgapur'],
     image: photo[2],
     links: [
-      { href: '#', icon: <ExternalLink size={24} />, hoverColor: 'hover:bg-accent-primary' }
+      { href: photo[2], icon: <ExternalLink size={24} />, hoverColor: 'hover:bg-accent-primary' }
+    ]
+  },
+  {
+    title: 'ArtPark CodeForge Hackathon',
+    description: 'Certified in full-stack web development with demonstrated proficiency in building modern, scalable applications using industry-standard technologies and best practices.',
+    tags: ['Competitive Coding', 'Full Stack', 'AI Integration', 'IISc Bengaluru'],
+    image: photo[1],
+    links: [
+      { href: photo[1], icon: <ExternalLink size={24} />, hoverColor: 'hover:bg-accent-primary' }
+    ]
+  },
+  {
+    title: 'JavaScript Intermediate',
+    description: 'Certified in JavaScript DOM manipulation with hands-on experience building interactive, dynamic web interfaces through event handling, element control, and real-time UI updates.',
+    tags: ['JavaScript', 'Sololearn'],
+    image: photo[7],
+    links: [
+      { href: photo[7], icon: <ExternalLink size={24} />, hoverColor: 'hover:bg-accent-primary' }
+    ]
+  },
+  {
+    title: 'C ++ Intermediate ',
+    description: 'Certified in Intermediate C++ programming with strong understanding of object-oriented concepts, STL, memory management, and efficient problem-solving techniques.',
+    tags: ['C++', 'Sololearn',],
+    image: photo[2],
+    links: [
+      { href: photo[2], icon: <ExternalLink size={24} />, hoverColor: 'hover:bg-accent-primary' }
     ]
   },
   {
@@ -27,16 +47,16 @@ const certificates = [
     tags: ['C Language', 'Sololearn'],
     image: photo[5],
     links: [
-      { href: '#', icon: <ExternalLink size={24} />, hoverColor: 'hover:bg-accent-primary' }
+      { href: photo[5], icon: <ExternalLink size={24} />, hoverColor: 'hover:bg-accent-primary' }
     ]
   },
   {
-    title: 'C++ programming Development',
-    description: '.',
+    title: 'C++ Introduction',
+    description: 'Certified in C++ programming fundamentals with strong command of syntax, problem-solving logic, object-oriented concepts, and core programming principles.',
     tags: ['C++', 'Sololearn'],
     image: photo[4],
     links: [
-      { href: '#', icon: <ExternalLink size={24} />, hoverColor: 'hover:bg-accent-primary' }
+      { href: photo[4], icon: <ExternalLink size={24} />, hoverColor: 'hover:bg-accent-primary' }
     ]
   },
   {
@@ -45,7 +65,7 @@ const certificates = [
     tags: ['HTML5', 'CSS3', 'JavaScript',"Sololearn"],
     image: photo[6],
     links: [
-      { href: '#', icon: <ExternalLink size={24} />, hoverColor: 'hover:bg-accent-primary' }
+      { href: photo[6], icon: <ExternalLink size={24} />, hoverColor: 'hover:bg-accent-primary' }
     ]
   },
 ];
