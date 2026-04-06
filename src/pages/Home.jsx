@@ -49,8 +49,9 @@ const Home = () => {
               View Work <ChevronRight size={20} />
             </a>
             <a
-              href="/resume.pdf"
+              href="https://drive.google.com/file/d/1EnJcjGKEK0swmRLuR2s2IKsMkPrfn9QN/view?usp=drive_link"
               download="Deepak_Resume.pdf"
+              target='_blank'
               className="flex items-center justify-center gap-2 px-8 py-3 rounded-full border border-accent-secondary text-white font-semibold hover:bg-accent-secondary/10 hover:-translate-y-1 transition-transform"
             >
               Download CV <Download size={20} />
