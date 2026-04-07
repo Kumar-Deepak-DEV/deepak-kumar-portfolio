@@ -8,7 +8,7 @@ const educationData = [
     title: 'Bachelor of Engineering in Computer Engineering',
     institution: 'Swaminarayan University',
     period: '2025 - 2029 | Currently in 2nd Semester',
-    marks: '',
+    marks: '10 CGPA',
     icon: GraduationCap,
     gradient: 'from-accent-primary to-accent-secondary',
   },
