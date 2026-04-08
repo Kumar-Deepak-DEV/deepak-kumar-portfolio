@@ -5,6 +5,7 @@ import About from './pages/About';
 import Skills from './pages/Skills';
 import Education from './pages/Education';
 import Projects from './pages/Projects';
+import Hackathons from './pages/Hackathons';
 import Certificates from './pages/Certificates';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
@@ -34,6 +35,7 @@ function App() {
         <About />
         <Skills />
         <Projects />
+        <Hackathons />
         <Certificates />
         <Education />
         <Contact />
