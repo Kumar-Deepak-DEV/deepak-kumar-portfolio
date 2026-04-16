@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -15,33 +16,29 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
-    
+
     setStatus('loading');
     setErrorMessage('');
-    
+
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
         },
-        body: JSON.stringify(formData),
-      });
-      
-      if (response.ok) {
-        setStatus('success');
-        setFormData({ name: '', email: '', message: '' });
-        setTimeout(() => setStatus('idle'), 5000);
-      } else {
-        const data = await response.json();
-        setStatus('error');
-        setErrorMessage(data.error || 'Something went wrong.');
-        setTimeout(() => setStatus('idle'), 5000);
-      }
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      setStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+      setTimeout(() => setStatus('idle'), 5000);
     } catch (error) {
       console.error(error);
       setStatus('error');
-      setErrorMessage('Failed to connect to the server.');
+      setErrorMessage('Failed to send message. Please try again.');
       setTimeout(() => setStatus('idle'), 5000);
     }
   };
@@ -49,7 +46,7 @@ const Contact = () => {
   return (
     <section id="contact" className="py-32 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -59,7 +56,7 @@ const Contact = () => {
         </motion.h2>
 
         <div className="grid md:grid-cols-2 gap-16">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -68,7 +65,7 @@ const Contact = () => {
             <div>
               <h3 className="text-3xl font-bold text-white mb-6">Let's talk about everything!</h3>
               <p className="text-gray-400 text-lg leading-relaxed">
-                Feel free to reach out for collaborations, opportunities, or just to say hi. 
+                Feel free to reach out for collaborations, opportunities, or just to say hi.
                 I'm currently open for new opportunities as a web developer!
               </p>
             </div>
@@ -106,7 +103,7 @@ const Contact = () => {
             </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -124,45 +121,45 @@ const Contact = () => {
               )}
               <div className="flex flex-col gap-2">
                 <label htmlFor="name" className="text-gray-400 font-medium ml-2">Your Name</label>
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   id="name"
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  placeholder="John Doe" 
+                  placeholder="John Doe"
                   className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-accent-primary transition-colors focus:bg-white/10"
                 />
               </div>
 
               <div className="flex flex-col gap-2">
                 <label htmlFor="email" className="text-gray-400 font-medium ml-2">Your Email</label>
-                <input 
-                  type="email" 
+                <input
+                  type="email"
                   id="email"
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  placeholder="john@example.com" 
+                  placeholder="john@example.com"
                   className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-accent-primary transition-colors focus:bg-white/10"
                 />
               </div>
 
               <div className="flex flex-col gap-2">
                 <label htmlFor="message" className="text-gray-400 font-medium ml-2">Message</label>
-                <textarea 
+                <textarea
                   id="message"
                   rows="5"
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  placeholder="Let's build something beautiful together..." 
+                  placeholder="Let's build something beautiful together..."
                   className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white resize-none focus:outline-none focus:border-accent-primary transition-colors focus:bg-white/10"
                 ></textarea>
               </div>
 
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 disabled={status === 'loading'}
                 className={`w-full py-4 mt-2 bg-gradient-to-r from-accent-primary to-accent-secondary rounded-2xl text-white font-bold text-lg flex justify-center items-center gap-3 transition-transform shadow-[0_10px_30px_rgba(123,66,246,0.3)] ${status === 'loading' ? 'opacity-70 cursor-not-allowed' : 'hover:-translate-y-1'}`}
               >
