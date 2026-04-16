@@ -41,10 +41,10 @@ frontend/
 
 *You can update these links with your actual profiles:*
 - **LinkedIn:** [Deepak Kumar](https://linkedin.com/in/)
-- **GitHub:** [Deepak Kumar](https://github.com/)
-- **LeetCode:** [Profile](https://leetcode.com/)
-- **Codeforces:** [Profile](https://codeforces.com/)
-- **Twitter / X:** [Profile](https://twitter.com/)
+- **LeetCode:** [Profile](https://leetcode.com/u/Dk-Kumar/)
+- **Codeforces:** [Profile](https://codeforces.com/profile/dk-Kumar)
+- **Twitter / X:** [Profile](https://x.com/DeepakKumarCgS)
+- **Youtube:** [Profile](https://www.youtube.com/@qbitCoderz)
 
 ---
 *Crafted with ❤️ by Deepak Kumar*
