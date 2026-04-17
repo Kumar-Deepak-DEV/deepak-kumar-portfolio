@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import { Mail, MapPin, Phone, Send} from 'lucide-react';
+import { FaLinkedin } from "react-icons/fa";
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 
@@ -77,17 +78,17 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-gray-400 font-medium mb-1">Email Me</h4>
-                  <a href="mailto:contact@deepakkumar.dev" className="text-white font-semibold text-lg hover:text-accent-primary transition-colors">contact@deepakkumar.dev</a>
+                  <a href="mailto:kumar.deepak.cg.s@gmail.com" className="text-white font-semibold text-lg hover:text-accent-primary transition-colors">kumar.deepak.cg.s@gmail.com</a>
                 </div>
               </div>
 
               <div className="flex items-center gap-6 group">
                 <div className="w-16 h-16 glass-card rounded-full flex justify-center items-center text-accent-secondary group-hover:bg-accent-secondary group-hover:text-white transition-colors duration-300">
-                  <Phone size={24} />
+                  <FaLinkedin size={24} />
                 </div>
                 <div>
-                  <h4 className="text-gray-400 font-medium mb-1">Call Me</h4>
-                  <a href="tel:+911234567890" className="text-white font-semibold text-lg hover:text-accent-primary transition-colors">+91 123 456 7890</a>
+                  <h4 className="text-gray-400 font-medium mb-1">Lets have a Chat</h4>
+                  <a href="https://www.linkedin.com/in/kumar-deepak-cg/" className="text-white font-semibold text-lg hover:text-accent-primary transition-colors">https://www.linkedin.com/in/kumar-deepak-cg/</a>
                 </div>
               </div>
 
